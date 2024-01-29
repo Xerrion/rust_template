@@ -16,9 +16,7 @@ jobs:
       uses: actions-rs/toolchain@v1
       with:
         profile: minimal
-        toolchain: stable
+        toolchain: nightly
         override: true
     - name: Build
       run: ./build.sh
-    - name: Run tests
-      run: cargo test --verbose

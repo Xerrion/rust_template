@@ -18,7 +18,6 @@ jobs:
         profile: minimal
         toolchain: nightly
         override: true
-      run:
-        rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
+        components: rust-src
     - name: Build
       run: ./build.sh

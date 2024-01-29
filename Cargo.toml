@@ -1,0 +1,22 @@
+cargo-features = ["profile-rustflags"]
+
+[package]
+name = "rust_template"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[profile.release]
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+panic = "abort"     # Abort on panic
+strip = true        # Automatically strip symbols from the binary.
+
+[profile.release-speed]
+inherits = "release"
+opt-level = 3       # Optimize for speed.
+
+[profile.release-min-size]
+inherits = "release"
+opt-level = "z"     # Optimize for size.
